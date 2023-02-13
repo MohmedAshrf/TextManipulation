@@ -20,11 +20,11 @@ def convert_int(in_list):
 
 
 Result = []
-with open(newest("/admin/tmp/")) as f:
+with open(newest("/admin/tmp/")) as f: #find the newest file to detect errors from
     for line in f:
         Instance_line = find_Instance(line)# find our targets to check
         if (Instance_line != None):
             numbers = convert_int(find_nums(Instance_line))
             if (len(numbers) > 10):
-                if numbers[-8] > 0:
+                if numbers[-8] > 0: #errors in line -8
                     print(line)
